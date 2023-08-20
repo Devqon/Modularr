@@ -1,3 +1,4 @@
+using Modularr.BackgroundTasks;
 using Modularr.Builder;
 using Modularr.Modules;
 using Modularr.Modules.Repositories;
@@ -34,6 +35,13 @@ public static class ServiceCollectionExtensions
         return builder;
     }
 
+    public static IServiceCollection AddBackgroundTask<TBackgroundTask>(this IServiceCollection services)
+        where TBackgroundTask : class, IBackgroundTask
+    {
+        services.AddSingleton<IBackgroundTask, TBackgroundTask>();
+        return services;
+    }
+
     private static void AddDefaultServices(ModularrBuilder builder)
     {
         var services = builder.Services;
@@ -60,5 +68,8 @@ public static class ServiceCollectionExtensions
 
         services.AddTransient<IModuleManager, ModuleManager>();
         services.AddTransient<IModuleRepository, ModuleRepository>();
+
+        services.AddHostedService<BackgroundTasksExecutor>();
+        services.AddSingleton<IBackgroundTaskManager, BackgroundTaskManager>();
     }
 }
