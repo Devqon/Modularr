@@ -1,6 +1,6 @@
-﻿namespace Modularr.Modules;
+namespace Modularr.Modules;
 
-internal interface IModuleManager
+public interface IModuleManager
 {
     Task<IEnumerable<ModuleInfo>> GetModulesAsync();
 }

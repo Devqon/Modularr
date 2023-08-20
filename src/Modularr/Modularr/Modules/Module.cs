@@ -16,6 +16,9 @@ public abstract class Module : IModule, IModuleStartup
     public abstract string Version { get; }
 
     /// <inheritdoc/>
+    public virtual string Category { get; } = "None";
+
+    /// <inheritdoc/>
     public virtual string Author { get; } = "";
 
     /// <inheritdoc/>

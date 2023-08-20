@@ -1,4 +1,4 @@
-﻿namespace Modularr.Modules.Repositories;
+namespace Modularr.Modules.Repositories;
 
 internal class ModuleRepository : IModuleRepository
 {
@@ -38,12 +38,13 @@ internal class ModuleRepository : IModuleRepository
         {
             Name = module.Name,
             IsEnabled = isEnabled,
-            Dependencies = module.Dependencies,
+            Description = module.Description,
+            Version = module.Version,
+            Category = module.Category,
             Author = module.Author,
             AuthorUrl = module.AuthorUrl,
-            Description = module.Description,
+            Dependencies = module.Dependencies,
             Tags = module.Tags,
-            Version = module.Version,
         };
     }
 

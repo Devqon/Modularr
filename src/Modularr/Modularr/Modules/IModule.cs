@@ -18,6 +18,11 @@ public interface IModule
     public string Version { get; }
 
     /// <summary>
+    /// The category.
+    /// </summary>
+    public string Category { get; }
+
+    /// <summary>
     /// The author.
     /// </summary>
     public string Author { get; }

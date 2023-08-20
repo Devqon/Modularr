@@ -1,17 +1,20 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Modularr.Examples.HelloWorld;
+using Modularr.Modules;
 using Modularr.Web.Models;
 
 namespace Modularr.Web.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly IModuleManager _moduleManager;
     private readonly IHelloWorldService _helloWorldService;
 
-    public HomeController(ILogger<HomeController> logger, IHelloWorldService helloWorldService)
+    public HomeController(ILogger<HomeController> logger, IModuleManager moduleManager, IHelloWorldService helloWorldService)
     {
         _logger = logger;
+        _moduleManager = moduleManager;
         _helloWorldService = helloWorldService;
     }
 
@@ -23,6 +26,12 @@ public class HomeController : Controller
     public IActionResult Privacy()
     {
         return View();
+    }
+
+    public async Task<IActionResult> Modules()
+    {
+        var modules = await _moduleManager.GetModulesAsync();
+        return View(modules);
     }
 
     public async Task<IActionResult> Hello()

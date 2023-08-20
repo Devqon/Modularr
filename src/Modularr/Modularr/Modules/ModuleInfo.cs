@@ -1,6 +1,6 @@
-﻿namespace Modularr.Modules;
+namespace Modularr.Modules;
 
-internal class ModuleInfo
+public class ModuleInfo
 {
     /// <summary>
     /// Name of the module.
@@ -11,6 +11,11 @@ internal class ModuleInfo
     /// Is the module enabled.
     /// </summary>
     public bool IsEnabled { get; internal set; }
+
+    /// <summary>
+    /// Category of the module.
+    /// </summary>
+    public string Category { get; internal set; }
 
     /// <summary>
     /// Description of the module.
