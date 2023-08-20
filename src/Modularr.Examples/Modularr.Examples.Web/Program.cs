@@ -1,8 +1,10 @@
+using Modularr.Examples.HelloWorld;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddModularr(builder =>
 {
-
+    builder.AddModule<HelloWorldModule>();
 });
 
 var app = builder.Build();
