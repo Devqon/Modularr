@@ -1,0 +1,37 @@
+@model IEnumerable<Modularr.Modules.ModuleInfo>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Modules</h1>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Category</th>
+            <th scope="col">Dependencies</th>
+            <th scope="col">Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var module in Model)
+        {
+            <tr>
+                <td>@module.Name</td>
+                <td>@module.Description</td>
+                <td>@module.Category</td>
+                <td>@(string.Join(", ", module.Dependencies))</td>
+                <td>
+                    @foreach (var tag in module.Tags)
+                    {
+                        <span class="badge bg-secondary">@tag</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
