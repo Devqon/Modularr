@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Modulith.Modules;
+namespace Modularr.Modules;
 
 public abstract class Module : IModule, IModuleStartup
 {

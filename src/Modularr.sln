@@ -3,18 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modulith", "Modulith", "{6CE7A3B6-767B-43B1-8221-B4A06CE2731F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modularr", "Modularr", "{6CE7A3B6-767B-43B1-8221-B4A06CE2731F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modulith", "Modulith\Modulith\Modulith.csproj", "{7E926756-B48D-4E40-9E7E-0D82A2ABD852}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modularr", "Modularr\Modularr\Modularr.csproj", "{7E926756-B48D-4E40-9E7E-0D82A2ABD852}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DF4558EB-4DC0-4CDF-9308-370B0E66C253}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modulith.Examples", "Modulith.Examples", "{D8B27907-B0B4-42E3-B46C-F68DBEF2ADAE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modularr.Examples", "Modularr.Examples", "{D8B27907-B0B4-42E3-B46C-F68DBEF2ADAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modulith.Web", "Modulith.Web\Modulith.Web.csproj", "{42844A2D-1B85-4F7F-83B0-92921680C529}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modularr.Web", "Modularr.Web\Modularr.Web.csproj", "{42844A2D-1B85-4F7F-83B0-92921680C529}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

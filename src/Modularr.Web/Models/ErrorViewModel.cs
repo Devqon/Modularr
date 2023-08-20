@@ -1,4 +1,4 @@
-namespace Modulith.Web.Models;
+namespace Modularr.Web.Models;
 
 public class ErrorViewModel
 {

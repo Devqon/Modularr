@@ -1,4 +1,4 @@
-﻿namespace Modulith.Modules;
+﻿namespace Modularr.Modules;
 
 internal interface IModuleManager
 {

@@ -1,4 +1,4 @@
-﻿namespace Modulith.Modules.Repositories;
+﻿namespace Modularr.Modules.Repositories;
 
 internal class ModuleRepository : IModuleRepository
 {

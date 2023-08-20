@@ -1,24 +1,24 @@
-using Modulith.Builder;
-using Modulith.Modules;
-using Modulith.Modules.Repositories;
+using Modularr.Builder;
+using Modularr.Modules;
+using Modularr.Modules.Repositories;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtensions
 {
-    public static ModulithBuilder AddModulith(this IServiceCollection services, Action<ModulithBuilder> configure)
+    public static ModularrBuilder AddModularr(this IServiceCollection services, Action<ModularrBuilder> configure)
     {
         if (services is null)
         {
             throw new ArgumentNullException(nameof(services));
         }
 
-        var builder = services.LastOrDefault(sd => sd.ServiceType == typeof(ModulithBuilder))?.ImplementationInstance as ModulithBuilder;
+        var builder = services.LastOrDefault(sd => sd.ServiceType == typeof(ModularrBuilder))?.ImplementationInstance as ModularrBuilder;
         var shouldCreate = builder is null;
 
         if (shouldCreate)
         {
-            builder = new ModulithBuilder(services);
+            builder = new ModularrBuilder(services);
             services.AddSingleton(builder);
         }
 
@@ -28,13 +28,13 @@ public static class ServiceCollectionExtensions
         {
             AddDefaultServices(builder);
             AddFrameworks(builder);
-            AddModulithServices(builder);
+            AddModularrServices(builder);
         }
 
         return builder;
     }
 
-    private static void AddDefaultServices(ModulithBuilder builder)
+    private static void AddDefaultServices(ModularrBuilder builder)
     {
         var services = builder.Services;
 
@@ -46,7 +46,7 @@ public static class ServiceCollectionExtensions
         services.AddHttpContextAccessor();
     }
 
-    private static void AddFrameworks(ModulithBuilder builder)
+    private static void AddFrameworks(ModularrBuilder builder)
     {
         var services = builder.Services;
 
@@ -54,7 +54,7 @@ public static class ServiceCollectionExtensions
         services.AddRazorPages();
     }
 
-    private static void AddModulithServices(ModulithBuilder builder)
+    private static void AddModularrServices(ModularrBuilder builder)
     {
         var services = builder.Services;
 

@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Modulith.Modules;
+using Modularr.Modules;
 
 namespace Microsoft.AspNetCore.Builder;
 
 public static class ApplicationBuilderExtensions
 {
-    public static IApplicationBuilder UseModulith(this IApplicationBuilder app)
+    public static IApplicationBuilder UseModularr(this IApplicationBuilder app)
     {
         var moduleStartups = app.ApplicationServices.GetServices<IModuleStartup>().OrderBy(ms => ms.Order);
 

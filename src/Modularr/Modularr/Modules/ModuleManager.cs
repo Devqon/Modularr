@@ -1,6 +1,6 @@
-﻿using Modulith.Modules.Repositories;
+﻿using Modularr.Modules.Repositories;
 
-namespace Modulith.Modules;
+namespace Modularr.Modules;
 
 internal class ModuleManager : IModuleManager
 {

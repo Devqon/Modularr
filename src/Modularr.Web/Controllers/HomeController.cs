@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Modulith.Web.Models;
+using Modularr.Web.Models;
 
-namespace Modulith.Web.Controllers;
+namespace Modularr.Web.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;

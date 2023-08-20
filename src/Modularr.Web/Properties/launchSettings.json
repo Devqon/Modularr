@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "Modulith.Web": {
+    "Modularr.Web": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

@@ -1,18 +1,18 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Modulith.Modules;
+using Modularr.Modules;
 
-namespace Modulith.Builder;
+namespace Modularr.Builder;
 
-public class ModulithBuilder
+public class ModularrBuilder
 {
-    internal ModulithBuilder(IServiceCollection services)
+    internal ModularrBuilder(IServiceCollection services)
     {
         Services = services;
     }
 
     public IServiceCollection Services { get; }
 
-    public ModulithBuilder AddModule<TModule>()
+    public ModularrBuilder AddModule<TModule>()
         where TModule : Module
     {
         var moduleInstance = (TModule) Activator.CreateInstance(typeof(TModule));

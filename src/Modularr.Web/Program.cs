@@ -1,6 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddModulith(builder =>
+builder.Services.AddModularr(builder =>
 {
 
 });
@@ -20,7 +20,7 @@ app.UseStaticFiles();
 
 app.UseAuthorization();
 
-app.UseModulith();
+app.UseModularr();
 
 app.MapControllerRoute(
     name: "default",
