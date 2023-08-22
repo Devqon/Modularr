@@ -8,7 +8,7 @@ namespace Modularr.BackgroundTasks;
 
 internal class BackgroundTasksExecutor : BackgroundService
 {
-    private static TimeSpan _runInterval = TimeSpan.FromMinutes(1);
+    private static readonly TimeSpan _runInterval = TimeSpan.FromMinutes(1);
 
     private readonly Dictionary<string, DateTime> _taskSchedules = new();
 
@@ -41,7 +41,7 @@ internal class BackgroundTasksExecutor : BackgroundService
                 .Where(ShouldRun)
                 .ToList();
 
-            var backgroundTaskTasks = backgroundTasksToRun.Select(task => RunBackgroundTask(task, scope.ServiceProvider));
+            var backgroundTaskTasks = backgroundTasksToRun.Select(task => RunBackgroundTask(task, scope.ServiceProvider, stoppingToken));
 
             await Task.WhenAll(backgroundTaskTasks);
         }
@@ -61,7 +61,7 @@ internal class BackgroundTasksExecutor : BackgroundService
         return DateTime.UtcNow >= nextRun;
     }
 
-    private async Task RunBackgroundTask(BackgroundTask backgroundTask, IServiceProvider serviceProvider)
+    private async Task RunBackgroundTask(BackgroundTask backgroundTask, IServiceProvider serviceProvider, CancellationToken stoppingToken)
     {
         var taskName = backgroundTask.Name;
         var task = serviceProvider.GetServices<IBackgroundTask>().GetTaskByName(taskName);
@@ -75,7 +75,7 @@ internal class BackgroundTasksExecutor : BackgroundService
         try
         {
             backgroundTask.Run();
-            await task.DoWorkAsync(serviceProvider);
+            await task.DoWorkAsync(serviceProvider, stoppingToken);
         }
         catch (Exception ex)
         {

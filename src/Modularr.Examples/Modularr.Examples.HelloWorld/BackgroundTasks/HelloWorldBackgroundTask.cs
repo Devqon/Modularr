@@ -13,7 +13,7 @@ internal class HelloWorldBackgroundTask : IBackgroundTask
         _helloWorldService = helloWorldService;
     }
 
-    public async Task DoWorkAsync(IServiceProvider serviceProvider)
+    public async Task DoWorkAsync(IServiceProvider serviceProvider, CancellationToken stoppingToken)
     {
         var message = await _helloWorldService.SayHelloAsync();
 
