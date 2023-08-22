@@ -13,10 +13,12 @@ internal class ModuleViewLocationExpander : IViewLocationExpander
 
         return viewLocations.Concat(new[]
         {
+            // Give views with Area (2) in it preference
+            "/Views/{2}/{1}/{0}.cshtml",
+            "/Views/{2}/Shared/{0}.cshtml",
+
             "/Views/{1}/{0}.cshtml",
             "/Views/Shared/{0}.cshtml",
-            "/Views/{2}/{1}/{0}.cshtml",
-            "/Views/{2}/Shared/{0}.cshtml"
         });
     }
 
