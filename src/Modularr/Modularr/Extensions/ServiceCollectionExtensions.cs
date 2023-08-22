@@ -1,7 +1,11 @@
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.Logging;
 using Modularr.BackgroundTasks;
 using Modularr.Builder;
 using Modularr.Modules;
 using Modularr.Modules.Repositories;
+using Modularr.Mvc;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
@@ -58,7 +62,13 @@ public static class ServiceCollectionExtensions
     {
         var services = builder.Services;
 
+        services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
+        services.Configure<RazorViewEngineOptions>(options =>
+        {
+            options.ViewLocationExpanders.Add(new ModuleViewLocationExpander());
+        });
         services.AddControllersWithViews();
+
         services.AddRazorPages();
     }
 

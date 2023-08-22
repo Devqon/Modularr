@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using Modularr.Examples.HelloWorld.BackgroundTasks;
 using Modularr.Modules;
@@ -21,5 +23,14 @@ public class HelloWorldModule : Module
         services.AddTransient<IHelloWorldService, HelloWorldService>();
 
         services.AddBackgroundTask<HelloWorldBackgroundTask>();
+    }
+
+    public override void Configure(IApplicationBuilder builder, IEndpointRouteBuilder routes, IServiceProvider serviceProvider)
+    {
+        routes.MapAreaControllerRoute(
+            name: "HelloWorld",
+            areaName: Name,
+            pattern: "/HelloWorld/{controller=HelloWorld}/{action=Index}/{id?}"
+        );
     }
 }
