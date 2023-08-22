@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
+using Modularr.Examples.HelloWorld.BackgroundTasks;
 using Modularr.Modules;
 
 namespace Modularr.Examples.HelloWorld;
@@ -18,5 +19,7 @@ public class HelloWorldModule : Module
     public override void ConfigureServices(IServiceCollection services)
     {
         services.AddTransient<IHelloWorldService, HelloWorldService>();
+
+        services.AddBackgroundTask<HelloWorldBackgroundTask>();
     }
 }
