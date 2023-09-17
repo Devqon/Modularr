@@ -2,7 +2,9 @@
 
 ## About
 
-.NET application framework for building Modular Monoliths
+.NET application framework for building Modular Monoliths.
+
+**The primary purpose of this framework is gathering knowledge of how to build Modular Monoliths with .NET effectively.**
 
 ## Features
 
