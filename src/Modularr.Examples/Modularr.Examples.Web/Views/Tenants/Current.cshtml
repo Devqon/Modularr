@@ -7,3 +7,24 @@
 <div class="text-center">
     <h1 class="display-4">Current tenant: @(Model?.Name ?? "None")</h1>
 </div>
+
+@if (Model != null)
+{
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Property name</th>
+            <th scope="col">Property value</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var property in Model.Properties)
+        {
+            <tr>
+                <td>@property.Key</td>
+                <td>@property.Value</td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
