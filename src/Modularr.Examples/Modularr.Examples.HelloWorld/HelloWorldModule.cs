@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using Modularr.Examples.HelloWorld.BackgroundTasks;
 using Modularr.Modules;
+using Modularr.Mvc.Utilities;
 
 namespace Modularr.Examples.HelloWorld;
 
@@ -27,10 +28,8 @@ public class HelloWorldModule : Module
 
     public override void Configure(IApplicationBuilder builder, IEndpointRouteBuilder routes, IServiceProvider serviceProvider)
     {
-        routes.MapAreaControllerRoute(
-            name: "HelloWorld",
-            areaName: Name,
-            pattern: "/HelloWorld/{controller=HelloWorld}/{action=Index}/{id?}"
+        routes.MapModuleControllerRoutes(
+            moduleName: Name
         );
     }
 }
