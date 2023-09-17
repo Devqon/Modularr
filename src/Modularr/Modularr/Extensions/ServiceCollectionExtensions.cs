@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Routing;
-using Microsoft.Extensions.Logging;
 using Modularr.BackgroundTasks;
 using Modularr.Builder;
 using Modularr.Modules;
@@ -18,6 +17,7 @@ public static class ServiceCollectionExtensions
             throw new ArgumentNullException(nameof(services));
         }
 
+        // Make it possible that AddModularr can be invoked multiple times, without reconfiguring everything
         var builder = services.LastOrDefault(sd => sd.ServiceType == typeof(ModularrBuilder))?.ImplementationInstance as ModularrBuilder;
         var shouldCreate = builder is null;
 
@@ -67,9 +67,7 @@ public static class ServiceCollectionExtensions
         {
             options.ViewLocationExpanders.Add(new ModuleViewLocationExpander());
         });
-        services.AddControllersWithViews();
-
-        services.AddRazorPages();
+        services.AddMvc();
     }
 
     private static void AddModularrServices(ModularrBuilder builder)

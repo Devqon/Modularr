@@ -1,0 +1,9 @@
+@model Modularr.MultiTenancy.ITenant;
+
+@{
+    ViewData["Title"] = "Current";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Current tenant: @(Model?.Name ?? "None")</h1>
+</div>

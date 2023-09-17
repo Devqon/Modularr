@@ -7,7 +7,10 @@ namespace Modularr.TestHelpers;
 public class ModularrAutoDataAttribute : AutoDataAttribute
 {
     public ModularrAutoDataAttribute()
-        : base(() => new Fixture().Customize(new AutoNSubstituteCustomization()))
+        : base(() => new Fixture()
+            .Customize(new AutoNSubstituteCustomization())
+            .Customize(new HttpContextCustomization())
+        )
     {
     }
 }

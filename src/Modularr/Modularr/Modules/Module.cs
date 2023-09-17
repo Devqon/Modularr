@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Modularr.Modules;
 
-public abstract class Module : IModule, IModuleStartup
+public abstract class Module : IModule, IStartup
 {
     /// <inheritdoc/>
     public abstract string Name { get; }

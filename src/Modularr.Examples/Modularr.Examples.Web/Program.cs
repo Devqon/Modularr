@@ -1,11 +1,12 @@
 using Modularr.Examples.HelloWorld;
+using Modularr.MultiTenancy.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddModularr(builder =>
 {
     builder.AddModule<HelloWorldModule>();
-});
+}).WithMultiTenancy();
 
 var app = builder.Build();
 
