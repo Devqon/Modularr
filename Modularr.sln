@@ -5,18 +5,27 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modularr", "Modularr", "{6CE7A3B6-767B-43B1-8221-B4A06CE2731F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modularr", "Modularr\Modularr\Modularr.csproj", "{7E926756-B48D-4E40-9E7E-0D82A2ABD852}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modularr", "src\Modularr\Modularr\Modularr.csproj", "{7E926756-B48D-4E40-9E7E-0D82A2ABD852}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DF4558EB-4DC0-4CDF-9308-370B0E66C253}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modularr.Examples", "Modularr.Examples", "{D8B27907-B0B4-42E3-B46C-F68DBEF2ADAE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modularr.Examples.Web", "Modularr.Examples\Modularr.Examples.Web\Modularr.Examples.Web.csproj", "{42844A2D-1B85-4F7F-83B0-92921680C529}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modularr.Examples.Web", "src\Modularr.Examples\Modularr.Examples.Web\Modularr.Examples.Web.csproj", "{42844A2D-1B85-4F7F-83B0-92921680C529}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modularr.Examples.HelloWorld", "Modularr.Examples\Modularr.Examples.HelloWorld\Modularr.Examples.HelloWorld.csproj", "{FD9D46B3-8FBF-47A4-BE7A-C4BD389B4E0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modularr.Examples.HelloWorld", "src\Modularr.Examples\Modularr.Examples.HelloWorld\Modularr.Examples.HelloWorld.csproj", "{FD9D46B3-8FBF-47A4-BE7A-C4BD389B4E0D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{00F074CB-B931-45A1-BD46-90840788FC4B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modularr.Tests", "tests\Modularr.Tests\Modularr.Tests.csproj", "{DB8453AC-BEC9-4FE4-860F-24DFC69B401D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modularr.TestHelpers", "tests\Modularr.TestHelpers\Modularr.TestHelpers.csproj", "{88F7FF2D-474E-405A-AB61-60BCEDDC619C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3BE6C971-0D9D-4002-AF91-6981619C8885}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,14 +45,26 @@ Global
 		{FD9D46B3-8FBF-47A4-BE7A-C4BD389B4E0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD9D46B3-8FBF-47A4-BE7A-C4BD389B4E0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD9D46B3-8FBF-47A4-BE7A-C4BD389B4E0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB8453AC-BEC9-4FE4-860F-24DFC69B401D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB8453AC-BEC9-4FE4-860F-24DFC69B401D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB8453AC-BEC9-4FE4-860F-24DFC69B401D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB8453AC-BEC9-4FE4-860F-24DFC69B401D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88F7FF2D-474E-405A-AB61-60BCEDDC619C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88F7FF2D-474E-405A-AB61-60BCEDDC619C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88F7FF2D-474E-405A-AB61-60BCEDDC619C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88F7FF2D-474E-405A-AB61-60BCEDDC619C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{6CE7A3B6-767B-43B1-8221-B4A06CE2731F} = {3BE6C971-0D9D-4002-AF91-6981619C8885}
 		{7E926756-B48D-4E40-9E7E-0D82A2ABD852} = {6CE7A3B6-767B-43B1-8221-B4A06CE2731F}
+		{D8B27907-B0B4-42E3-B46C-F68DBEF2ADAE} = {3BE6C971-0D9D-4002-AF91-6981619C8885}
 		{42844A2D-1B85-4F7F-83B0-92921680C529} = {D8B27907-B0B4-42E3-B46C-F68DBEF2ADAE}
 		{FD9D46B3-8FBF-47A4-BE7A-C4BD389B4E0D} = {D8B27907-B0B4-42E3-B46C-F68DBEF2ADAE}
+		{DB8453AC-BEC9-4FE4-860F-24DFC69B401D} = {00F074CB-B931-45A1-BD46-90840788FC4B}
+		{88F7FF2D-474E-405A-AB61-60BCEDDC619C} = {00F074CB-B931-45A1-BD46-90840788FC4B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5864A4A1-87CB-4017-A272-AC3D4043F5F2}
