@@ -1,0 +1,23 @@
+<Project>
+  <PropertyGroup>
+    <PackageTags>Modularr</PackageTags>
+    <Copyright>Devqon and Modularr Contributors</Copyright>
+    <Authors>Devqon and Modularr Contributors</Authors>
+    <Owners>Devqon and Modularr Contributors</Owners>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    
+    <VersionPrefix>0.0.1</VersionPrefix>
+    <VersionSuffix>alpha</VersionSuffix>
+    <VersionSuffix Condition="'$(VersionSuffix)'!='' AND '$(BuildNumber)' != ''">$(VersionSuffix)-$(BuildNumber)</VersionSuffix>
+
+    <LangVersion>Latest</LangVersion>
+    <TargetFramework>net6.0</TargetFramework>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Allow internals to be mocked -->
+    <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+    <InternalsVisibleTo Include="$(AssemblyName).Tests" />
+  </ItemGroup>
+</Project>
