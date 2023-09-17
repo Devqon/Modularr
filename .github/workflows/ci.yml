@@ -3,11 +3,11 @@ name: Build & Test
 on:
   push:
     branches: [main]
-  issue_comment:
-    types: [created, deleted]
+  pull_request:
+    branches: [main, release/**]
 
 jobs:
-  build:
+  build_test:
 
     runs-on: ubuntu-latest
 
