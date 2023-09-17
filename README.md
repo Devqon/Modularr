@@ -41,8 +41,8 @@ app.UseModularr();
 ## Roadmap
 
 - [ ] Publish to NuGet
-- [ ] Scheduled background tasks
-- [ ] Multitenancy
+- [x] Scheduled background tasks
+- [x] Multitenancy
 - [ ] Build-in support for datastores
   - [ ] SQLite
   - [ ] SQL server

@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Modularr.Modules;
 
-public interface IModuleStartup
+public interface IStartup
 {
     /// <summary>
     /// Get the value to use to order startups to configure services. The default is 0.

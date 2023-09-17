@@ -7,7 +7,7 @@ public static class ApplicationBuilderExtensions
 {
     public static IApplicationBuilder UseModularr(this IApplicationBuilder app)
     {
-        var moduleStartups = app.ApplicationServices.GetServices<IModuleStartup>().OrderBy(ms => ms.Order);
+        var moduleStartups = app.ApplicationServices.GetServices<IStartup>().OrderBy(ms => ms.Order);
 
         app
             .UseRouting()
